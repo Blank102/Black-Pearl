@@ -4,7 +4,6 @@ Copying any code from the css will lead to issues, i would not prefer doing that
 */
 
 :root {
-    --menu-background-color: rgba(255, 255, 255, 0.16);
     --menu-hover-background-color: rgba(203, 203, 203, 0.09);
     --home-menu-text-color: rgb(255, 255, 255);
     --topbar-background-color: rgba(255, 255, 255, 0);
@@ -435,11 +434,6 @@ a:active {
     color: var(--link);
 }
 
-.chatItem {
-    background-color: var(--chat-background-color) !important;
-    border-radius: var(--chat-roundness);
-}
-
 #voiceDisplay {
     display: var(--chat-mic-display) !important;
 }
@@ -514,10 +508,6 @@ a:active {
     color: var(--chat-you-color) !important;
 }
 
-.menuItem {
-    background: var(--menu-background-color) !important;
-}
-
 .headerBar {
     background-color: var(--topbar-background-color) !important;
 }
@@ -528,10 +518,6 @@ a:active {
 
 .progressBar {
     background-color: var(--home-progress-bar-background) !important;
-}
-
-.menuItem:hover {
-    background: var(--menu-hover-background-color) !important;
 }
 
 .menuItem .menuItemTitle {
@@ -698,8 +684,10 @@ span[style*='color: rgba(0, 0, 0, 0.8)'], .menuTabNew {
     height: 114.895px !important;
     left: 0 !important;
     position: absolute !important;
-    top: -4.5px;
-    width: 100% !important
+    top: -9px;
+    width: 100% !important;
+    background-color: transparent;
+    border: solid 4px #000
 }
 
 .menuItemTitle {
@@ -716,36 +704,37 @@ span[style*='color: rgba(0, 0, 0, 0.8)'], .menuTabNew {
 }
 
 #menuItemContainer:hover {
-    -webkit-transform: translateY(3.8px);
-    transform: translateY(3.8px);
-    border-style: solid!important;
-    border-color: #000!important;
-}
-
-.menuItem:hover {
-    border-top: none;
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
 }
 
 .menuItem .menuItemTitle {
     margin-top: -3%;
+    font-size: 22px !important;
     color: white;
     text-shadow: none;
 }
 
 .material-icons-outlined.menBtnIcn {
     color: #000 !important;
-    margin-top: -20px;
+    margin-top: -35px;
     font-weight: bolder
 }
 
 .menuItem:hover .menBtnIcn {
     color: rgb(216 216 216)53 53) !important;
     transform: scale(1);
+    font-weight: normal !important
+}
+
+.menuItem {
+    background-color: rgb(30 30 30 / 45%)
 }
 
 .menuItem:hover {
     border-left: none!important;
     border-top: 5px solid #fff;
+    background-color: #0000 !important
 }
 
 #menuItemContainer::before {
@@ -815,13 +804,25 @@ span[style*='color: rgba(0, 0, 0, 0.8)'], .menuTabNew {
     top: unset;
     height: 70px;
     background-color: rgba(0,0,0,.5);
-    border-style: solid!important;
-    border-color: #fff!important;
+    border: solid 3px #fff;;
     left: 50%;
     transform: translate(-50%);
     padding-right: unset;
     padding: 0px 0px 0px 15px;
     border-radius: 0 0 0 0 !important;
+}
+
+.verticalSeparator {
+    background-color: #fff
+}
+
+#mLevelCont {
+    border-left: solid 3px #fff;
+    background-color: #0000;
+    border-bottom-right-radius: 0px;
+    border-radius: 0;
+    left: 267px;
+    padding-right: 10px;
 }
 
 #menuAccountUsername, #menuKRCount {
@@ -833,7 +834,23 @@ span[style*='color: rgba(0, 0, 0, 0.8)'], .menuTabNew {
 }
 
 #uiBase.onMenu #chatHolder {
-    left: 0.5%
+    left: 10px !important;
+    bottom: 10px !important
+}
+
+#chatList {
+    background-color: rgb(0 0 0 / 30%);
+    position: relative !important;
+    margin-bottom: -15px !important;
+    border-bottom: solid 5px #ff}
+
+#chatSwitch {
+    display: none
+}
+
+#chatInputHolder {
+    background-color: #0000;
+    border: none !important
 }
 
 #uiBase.onMenu #claimHolder {
@@ -911,43 +928,35 @@ span[style*='color: rgba(0, 0, 0, 0.8)'], .menuTabNew {
 }
 
 #policeButton {
-    margin-right: 10px;
-    margin-left: -80px;
-    top: 120%!important;
-    left: -290%!important;
+    position: fixed;
+    top: 115px;
+    left: -95px;
     color: #fff;
     display: inline-block;
-    border-radius: 6px
+    transform: scale(1.2);
+    border-radius: 6px;
+    background-color: #0000 !important;
+    box-shadow: none !important
 }
 
 .progressBar {
     display: none;
 }
 
-#chatInput {
-    width: 100%;
-    height: 40px!important;
-    padding: 5px;
-    padding-left: 10px;
-    color: #fff;
-    font-size: 21px!important;
-    box-sizing: border-box;
-    border: none;
-    background-color: rgba(0,0,0,.4);
-    border-radius: 6px;
-    pointer-events: all;
+::-webkit-scrollbar {
+    display: none !important
 }
 
-#mLevelCont {
-    border-style: solid!important;
-    border-color: #fff!important;
-    background-color: #0000;
-    border-bottom-right-radius: 0px;
-    position: fixed;
-    border-radius: 0;
-    left: 267px;
-    border-left: none !important;
-    padding-right: 10px;
+#chatInput {
+    width: 340px;
+    height: 40px!important;
+    padding-left: 15px;
+    font-size: 21px!important;
+    border: none;
+    background-color: rgba(0,0,0,.30) !important;
+    border-radius: 0px;
+    position: relative;
+    margin-left: -10px;
 }
 
 .rankClck, #menuMiniProfilePic {
@@ -1085,8 +1094,8 @@ span[style*='color: rgba(0, 0, 0, 0.8)'], .menuTabNew {
 }
 
 #chatHolder {
-    bottom: 30px !important;
-    left: 20px !important;
+    left: 10px !important;
+    bottom: 10px !important;
     background-color: var(--ingame-bg-color);
 }
 
@@ -1108,7 +1117,15 @@ span[style*='color: rgba(0, 0, 0, 0.8)'], .menuTabNew {
 }
 
 #customizeButton {
-    font-size: 26px!important;
+    font-size: 30px!important;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 50px
+}
+
+#customizeButton .material-icons {
+    display: none !important;
 }
 
 #leaderContainer {
@@ -1272,6 +1289,15 @@ input:checked+.sliderSml {
     display: none!important;
 }
 
+#fpsDisplay, #pingText {
+    font-size: 22px !important
+}
+
+#pingText {
+    position: relative;
+    top: 5px !important
+}
+
 .headerBarRight {
     background-color: transparent !important;
     top: 50% !important;
@@ -1313,6 +1339,49 @@ input:checked+.sliderSml {
 .weapIcon[style*="1"] {
     opacity: 1 !important;
     height: 70px;
+}
+
+/* Spectate */
+#uiBase.onMenu #spectButton {
+    left: calc(50% + 240px);
+    bottom: 20px !important;
+    top: unset;
+    position: fixed;
+    bottom: unset;
+    height: 30px !important;
+    width: 60px !important;
+    padding-bottom: 19px;
+    text-align: center !important
+}
+
+#spectButton span {
+    color: #0000!important
+}
+
+#spectButton .sliderSml {
+    visibility: hidden!important;
+}
+
+#spectButton .sliderSml:after {
+    visibility: visible;
+    font-family: 'Material-Icons';
+    content: 'visibility_off';
+    color: rgb(255 255 255);
+    position: fixed!important;
+    left: 10px!important;
+    font-size: 42px;
+    transition-duration: 0.3s;
+    text-align: center !important;
+    margin-left: 5px;
+}
+
+#spectButton input:checked+.sliderSml:after {
+    visibility: visible;
+    content: 'visibility';
+    font-size: 42px;
+    transition-duration: 0.4s;
+    color: rgb(255 255 255 / 80%);
+    text-align: center !important;
 }
 
 /* 
